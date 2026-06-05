@@ -5,6 +5,8 @@
       "settings": {
         "color_scheme": "scheme-1",
         "height": "large",
+        "image_asset": "hero.png",
+        "overlay_opacity": 30,
         "overline": "Feiner Schmuck · Handverlesen",
         "heading": "Maison Aurielle",
         "subheading": "<p>Zeitlose Stücke, gefertigt für Momente, die bleiben. Entdecke Schmuck und Uhren, die deine Geschichte erzählen.</p>",
@@ -64,44 +66,16 @@
       }
     },
     "brand_story": {
-      "type": "rich-text",
-      "blocks": {
-        "overline": {
-          "type": "caption",
-          "settings": {
-            "caption": "Die Maison",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Schmuck mit Seele",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Maison Aurielle steht für stille Eleganz und feine Details. Jedes Stück wird sorgfältig ausgewählt – von schimmernden Süßwasserperlen über filigrane Halsketten bis zu präzisen Damenuhren. Schmuck, der nicht laut sein muss, um gesehen zu werden.</p>"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Unsere Geschichte",
-            "button_link": "shopify://pages/ueber-uns",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": ["overline", "heading", "text", "button"],
+      "type": "image-feature-maison",
       "settings": {
-        "color_scheme": "scheme-3",
-        "full_width": true,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "color_scheme": "scheme-1",
+        "image_asset": "about-portrait.png",
+        "image_position": "left",
+        "overline": "Die Maison",
+        "heading": "Schmuck mit Seele",
+        "text": "<p>Maison Aurielle steht für stille Eleganz und feine Details. Jedes Stück wählen wir mit Sorgfalt aus – von schimmernden Süßwasserperlen über filigrane Halsketten bis zu präzisen Damenuhren.</p><p>Schmuck, der nicht laut sein muss, um gesehen zu werden.</p>",
+        "button_label": "Unsere Geschichte",
+        "button_link": "shopify://pages/uber-uns"
       }
     },
     "watches": {
