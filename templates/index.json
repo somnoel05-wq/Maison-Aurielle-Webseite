@@ -1,42 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero-maison",
       "settings": {
         "color_scheme": "scheme-3",
-        "text_align": "left",
-        "height": "large",
-        "image_asset": "hero-heart-pendant.png",
         "overline": "Feiner Schmuck · Handverlesen",
         "heading": "Zeitloser Schmuck für besondere Momente",
         "subheading": "<p>Entdecke Halsketten, Uhren und Perlen von Maison Aurielle – fein, feminin und gefertigt, um zu bleiben.</p>",
         "button_label_1": "Kollektion entdecken",
         "button_link_1": "shopify://collections/frontpage",
         "button_label_2": "Uhren ansehen",
-        "button_link_2": "shopify://collections/uhren"
+        "button_link_2": "shopify://collections/uhren",
+        "image_asset": "hero-heart-pendant.png",
+        "height": "large"
       }
     },
     "bestsellers": {
       "type": "featured-collection",
       "settings": {
+        "collection": "frontpage",
+        "products_to_show": 8,
         "title": "Sommer-Favoriten",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
-        "collection": "frontpage",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": true,
-        "view_all_style": "solid",
         "enable_desktop_slider": false,
         "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 56,
@@ -46,12 +53,37 @@
     "categories": {
       "type": "collection-list",
       "blocks": {
-        "c1": { "type": "featured_collection", "settings": { "collection": "halsketten" } },
-        "c2": { "type": "featured_collection", "settings": { "collection": "uhren" } },
-        "c3": { "type": "featured_collection", "settings": { "collection": "armbander" } },
-        "c4": { "type": "featured_collection", "settings": { "collection": "perlenschmuck" } }
+        "c1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "halsketten"
+          }
+        },
+        "c2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "uhren"
+          }
+        },
+        "c3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "armbander"
+          }
+        },
+        "c4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "perlenschmuck"
+          }
+        }
       },
-      "block_order": ["c1", "c2", "c3", "c4"],
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
       "settings": {
         "title": "Nach Kategorie entdecken",
         "heading_size": "h1",
@@ -81,14 +113,14 @@
     "watches": {
       "type": "featured-collection",
       "settings": {
-        "title": "Zeitlose Uhren",
-        "heading_size": "h1",
         "collection": "uhren",
         "products_to_show": 4,
+        "title": "Zeitlose Uhren",
+        "heading_size": "h1",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "show_view_all": true,
         "view_all_style": "link",
+        "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -139,20 +171,25 @@
           }
         }
       },
-      "block_order": ["u1", "u2", "u3", "u4"],
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
       "settings": {
         "title": "Warum Maison Aurielle",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "scheme-5",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 56,
         "padding_bottom": 56
       }
@@ -160,14 +197,14 @@
     "necklaces": {
       "type": "featured-collection",
       "settings": {
-        "title": "Halsketten, die Geschichten erzählen",
-        "heading_size": "h1",
         "collection": "halsketten",
         "products_to_show": 4,
+        "title": "Halsketten, die Geschichten erzählen",
+        "heading_size": "h1",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "show_view_all": true,
         "view_all_style": "link",
+        "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -194,10 +231,15 @@
           }
         },
         "email_form": {
-          "type": "email_form"
+          "type": "email_form",
+          "settings": {}
         }
       },
-      "block_order": ["heading", "paragraph", "email_form"],
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "full_width": true,
