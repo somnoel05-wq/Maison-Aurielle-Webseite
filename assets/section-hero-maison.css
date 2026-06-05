@@ -42,11 +42,13 @@
 }
 
 .hero-maison__scrim--left {
-  background: linear-gradient(90deg, rgba(8, 7, 6, 0.66) 0%, rgba(8, 7, 6, 0.28) 52%, rgba(8, 7, 6, 0.05) 100%);
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.8) 0%, rgba(8, 7, 6, 0.46) 48%, rgba(8, 7, 6, 0.12) 100%),
+    linear-gradient(0deg, rgba(8, 7, 6, 0.3) 0%, rgba(8, 7, 6, 0) 35%);
 }
 
 .hero-maison__scrim--center {
-  background: radial-gradient(ellipse at center, rgba(8, 7, 6, 0.35) 0%, rgba(8, 7, 6, 0.62) 100%);
+  background: radial-gradient(ellipse at center, rgba(8, 7, 6, 0.42) 0%, rgba(8, 7, 6, 0.68) 100%);
 }
 
 .hero-maison__inner {
