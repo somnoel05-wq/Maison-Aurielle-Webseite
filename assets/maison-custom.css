@@ -1,65 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap');
+
 /* ============================================================
-   Maison Aurielle – Brand polish layered over Dawn
-   Centralised typographic + accent refinements.
+   Maison Aurielle – Design-System layer over Dawn
+   Fonts: Cormorant Garamond (display) + Jost (sans)
+   Palette tokens injected via Dawn color schemes.
    ============================================================ */
 
 :root {
-  --ma-gold: #b08d45;
-  --ma-gold-soft: #c6a052;
+  --ma-gold: #c6a152;
+  --ma-gold-deep: #b08b38;
+  --ma-ink: #2e2d2b;
+  --ma-ink-2: #5b5853;
 }
 
-/* --- Buttons: quiet, letter-spaced, generous --- */
+:root,
+.shopify-section,
+.color-scheme-1,
+.color-scheme-2,
+.color-scheme-3,
+.color-scheme-4,
+.color-scheme-5 {
+  --font-heading-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-heading-weight: 500;
+  --font-heading-style: normal;
+  --font-body-family: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --font-body-weight: 400;
+}
+
+body {
+  font-family: var(--font-body-family);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* --- Headings: Cormorant, refined --- */
+h1, h2, h3, h4,
+.h0, .h1, .h2, .h3,
+.title,
+.product__title {
+  font-family: var(--font-heading-family);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* --- Buttons: gold (from scheme), quiet uppercase --- */
 .button,
-.shopify-payment-button__button--unbranded {
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button__more-options {
+  font-family: var(--font-body-family);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 1.25rem;
+  font-weight: 500;
   padding-top: 1.35rem;
   padding-bottom: 1.35rem;
-  min-height: 4.8rem;
+  min-height: 4.6rem;
 }
 
-/* --- Navigation: refined uppercase --- */
+/* --- Navigation: small uppercase, ink --- */
 .header__menu-item,
 .header__menu-item.list-menu__item {
+  font-family: var(--font-body-family);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
-/* --- Wordmark logo (shop name as text) --- */
+/* --- Wordmark logo (shop name as text) in Jost --- */
 .header__heading-link,
-.header__heading-link .h2 {
+.header__heading-link .h2,
+.header__heading {
+  font-family: var(--font-body-family) !important;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* --- Announcement bar: fine caps --- */
+.announcement-bar__message {
+  font-family: var(--font-body-family);
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  font-size: 1.1rem;
   font-weight: 400;
 }
 
-/* --- Headings: a touch of editorial spacing --- */
-h1,
-h2,
-.h1,
-.h2,
-.title--primary {
-  letter-spacing: 0.012em;
-  font-weight: 400;
+/* --- Eyebrow / caption accents in gold --- */
+.caption-with-letter-spacing,
+.hero-maison__overline,
+.image-feature__overline {
+  color: var(--ma-gold-deep);
+  letter-spacing: 0.32em;
 }
 
-/* --- Announcement bar: small caps elegance --- */
-.announcement-bar__message {
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 1.15rem;
-  font-weight: 500;
-}
-
-/* --- Section titles centered with a gold hairline --- */
-.collection-list-title,
-.section-collection-list .title-wrapper-with-link,
+/* --- Section titles centered with gold hairline --- */
 .featured-collection .title-wrapper-with-link,
-.multicolumn .title-wrapper {
-  text-align: center;
+.collection-list .title-wrapper-with-link,
+.multicolumn .title-wrapper,
+.section-collection-list .title-wrapper-with-link {
   justify-content: center;
+  text-align: center;
 }
 
 .featured-collection .title::after,
@@ -67,16 +108,23 @@ h2,
 .multicolumn .title::after {
   content: "";
   display: block;
-  width: 5rem;
+  width: 4.4rem;
   height: 1px;
-  margin: 1.6rem auto 0;
+  margin: 1.4rem auto 0;
   background-color: var(--ma-gold);
 }
 
-/* --- Product / collection cards --- */
+/* --- Product / collection card names: Cormorant --- */
 .card__heading,
-.card__heading a {
-  letter-spacing: 0.02em;
+.card__heading a,
+.card-information__text {
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.01em;
+}
+
+.card__heading {
+  font-size: 1.9rem;
+  font-weight: 500;
 }
 
 .card__information {
@@ -84,12 +132,13 @@ h2,
   padding-bottom: 1.4rem;
 }
 
-/* --- Price accent --- */
-.price__regular .price-item--regular {
+/* --- Prices --- */
+.price {
+  font-family: var(--font-body-family);
   letter-spacing: 0.03em;
 }
 
-/* --- Links underline accent in body copy --- */
+/* --- Links in copy --- */
 .rte a {
   text-underline-offset: 0.3rem;
 }

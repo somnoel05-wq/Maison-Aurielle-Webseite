@@ -2,37 +2,19 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
-  text-align: center;
-  color: rgb(var(--color-foreground));
   background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
 }
 
-.hero-maison--medium {
-  min-height: 48rem;
-}
-
-.hero-maison--large {
-  min-height: 64rem;
-}
-
-.hero-maison--full {
-  min-height: 100vh;
-}
+.hero-maison--medium { min-height: 56rem; }
+.hero-maison--large { min-height: 72rem; max-height: 82rem; height: 86vh; }
+.hero-maison--full { min-height: 100vh; }
 
 @media screen and (max-width: 749px) {
-  .hero-maison--medium {
-    min-height: 42rem;
-  }
-
-  .hero-maison--large {
-    min-height: 52rem;
-  }
-
-  .hero-maison--full {
-    min-height: 88vh;
-  }
+  .hero-maison--medium { min-height: 48rem; }
+  .hero-maison--large { min-height: 58rem; height: auto; }
+  .hero-maison--full { min-height: 90vh; }
 }
 
 .hero-maison__media {
@@ -46,97 +28,109 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  opacity: 0.94;
 }
 
-.hero-maison__overlay {
+.hero-maison__scrim {
   position: absolute;
   inset: 0;
-  background-color: #2a2622;
 }
 
-.hero-maison__inner--card {
-  background-color: rgba(251, 248, 243, 0.88);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  padding: 5rem 4.5rem;
-  box-shadow: 0 10px 44px rgba(42, 38, 34, 0.14);
+.hero-maison__scrim--left {
+  background: linear-gradient(90deg, rgba(8, 7, 6, 0.66) 0%, rgba(8, 7, 6, 0.28) 52%, rgba(8, 7, 6, 0.05) 100%);
 }
 
-@media screen and (max-width: 749px) {
-  .hero-maison__inner--card {
-    padding: 3.4rem 2.2rem;
-  }
+.hero-maison__scrim--center {
+  background: radial-gradient(ellipse at center, rgba(8, 7, 6, 0.35) 0%, rgba(8, 7, 6, 0.62) 100%);
 }
 
 .hero-maison__inner {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top: 6rem;
   padding-bottom: 6rem;
-  max-width: 78rem;
+}
+
+.hero-maison--left .hero-maison__inner {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-maison--center .hero-maison__inner {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 80rem;
 }
 
 .hero-maison__overline {
-  margin: 0 0 2.2rem;
+  margin: 0 0 1.8rem;
   font-size: 1.25rem;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   font-weight: 500;
-  opacity: 0.85;
+  color: #e9d9ac;
 }
 
 .hero-maison__heading {
   margin: 0;
-  font-size: clamp(4.4rem, 8vw, 9rem);
-  line-height: 1.02;
-  letter-spacing: 0.01em;
-  font-weight: 400;
+  max-width: 14ch;
+  font-size: clamp(4.6rem, 6vw, 8.2rem);
+  line-height: 1.04;
+  letter-spacing: 0.006em;
+  font-weight: 500;
+  color: #ffffff;
 }
 
-.hero-maison__rule {
-  display: block;
-  width: 6rem;
-  height: 1px;
-  margin: 3rem auto;
-  background-color: #b08d45;
+.hero-maison--center .hero-maison__heading {
+  max-width: 18ch;
 }
 
 .hero-maison__subheading {
-  margin: 0 auto;
-  max-width: 52rem;
+  margin: 2.2rem 0 0;
+  max-width: 40ch;
   font-size: 1.7rem;
-  line-height: 1.7;
-  opacity: 0.92;
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.86);
 }
 
-.hero-maison__subheading p {
-  margin: 0;
-}
+.hero-maison__subheading p { margin: 0; }
 
 .hero-maison__buttons {
-  margin-top: 3.6rem;
+  margin-top: 3.4rem;
   display: flex;
   gap: 1.4rem;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
-.hero-maison__button {
-  min-width: 22rem;
+.hero-maison--center .hero-maison__buttons {
+  justify-content: center;
+}
+
+.hero-maison__btn {
+  min-width: 21rem;
+}
+
+/* secondary button on dark = light outline */
+.hero-maison .button--secondary {
+  --color-button: 244, 238, 226;
+  border-color: rgba(244, 238, 226, 0.55);
+  color: #f4eee2;
+  background: transparent;
 }
 
 @media screen and (max-width: 749px) {
   .hero-maison__inner {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 4.4rem;
+    padding-bottom: 4.4rem;
   }
-
   .hero-maison__overline {
     font-size: 1.1rem;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.26em;
   }
-
-  .hero-maison__button {
-    min-width: 100%;
-  }
+  .hero-maison__btn { min-width: 100%; }
 }

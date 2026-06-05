@@ -3,13 +3,13 @@
     "hero": {
       "type": "hero-maison",
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
+        "text_align": "left",
         "height": "large",
-        "image_asset": "hero.png",
-        "overlay_opacity": 30,
+        "image_asset": "hero-heart-pendant.png",
         "overline": "Feiner Schmuck · Handverlesen",
-        "heading": "Maison Aurielle",
-        "subheading": "<p>Zeitlose Stücke, gefertigt für Momente, die bleiben. Entdecke Schmuck und Uhren, die deine Geschichte erzählen.</p>",
+        "heading": "Zeitloser Schmuck für besondere Momente",
+        "subheading": "<p>Entdecke Halsketten, Uhren und Perlen von Maison Aurielle – fein, feminin und gefertigt, um zu bleiben.</p>",
         "button_label_1": "Kollektion entdecken",
         "button_link_1": "shopify://collections/frontpage",
         "button_label_2": "Uhren ansehen",

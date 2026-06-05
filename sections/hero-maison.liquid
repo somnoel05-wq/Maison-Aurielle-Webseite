@@ -1,40 +1,41 @@
 {{ 'section-hero-maison.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign has_image = false
-  if section.settings.background_image != blank or section.settings.image_asset != blank
-    assign has_image = true
+  assign has_picker = false
+  assign has_asset = false
+  if section.settings.background_image != blank
+    assign has_picker = true
+  elsif section.settings.image_asset != blank
+    assign has_asset = true
   endif
 -%}
 
-<div class="hero-maison hero-maison--{{ section.settings.height }} color-{{ section.settings.color_scheme }} gradient{% if has_image %} hero-maison--image{% endif %}">
-  {%- if has_image -%}
-    <div class="hero-maison__media">
-      {%- if section.settings.background_image != blank -%}
-        {{
-          section.settings.background_image
-          | image_url: width: 3000
-          | image_tag:
-            loading: 'eager',
-            fetchpriority: 'high',
-            sizes: '100vw',
-            widths: '750, 1100, 1500, 2000, 3000',
-            class: 'hero-maison__image'
-        }}
-      {%- elsif section.settings.image_asset != blank -%}
-        <img
-          src="{{ section.settings.image_asset | asset_url }}"
-          alt=""
-          class="hero-maison__image"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- endif -%}
-      <span class="hero-maison__overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"></span>
-    </div>
-  {%- endif -%}
+<div class="hero-maison hero-maison--{{ section.settings.height }} hero-maison--{{ section.settings.text_align }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="hero-maison__media">
+    {%- if has_picker -%}
+      {{
+        section.settings.background_image
+        | image_url: width: 3000
+        | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          sizes: '100vw',
+          widths: '750, 1100, 1500, 2000, 3000',
+          class: 'hero-maison__image'
+      }}
+    {%- elsif has_asset -%}
+      <img
+        src="{{ section.settings.image_asset | asset_url }}"
+        alt=""
+        class="hero-maison__image"
+        loading="eager"
+        fetchpriority="high"
+      >
+    {%- endif -%}
+    <span class="hero-maison__scrim hero-maison__scrim--{{ section.settings.text_align }}" aria-hidden="true"></span>
+  </div>
 
-  <div class="hero-maison__inner page-width{% if has_image %} hero-maison__inner--card{% endif %}">
+  <div class="hero-maison__inner page-width">
     {%- if section.settings.overline != blank -%}
       <p class="hero-maison__overline">{{ section.settings.overline }}</p>
     {%- endif -%}
@@ -43,8 +44,6 @@
       <h1 class="hero-maison__heading">{{ section.settings.heading }}</h1>
     {%- endif -%}
 
-    <span class="hero-maison__rule" aria-hidden="true"></span>
-
     {%- if section.settings.subheading != blank -%}
       <div class="hero-maison__subheading rte">{{ section.settings.subheading }}</div>
     {%- endif -%}
@@ -52,18 +51,12 @@
     {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
       <div class="hero-maison__buttons">
         {%- if section.settings.button_label_1 != blank -%}
-          <a
-            href="{{ section.settings.button_link_1 | default: '#' }}"
-            class="button button--primary hero-maison__button"
-          >
+          <a href="{{ section.settings.button_link_1 | default: '#' }}" class="button button--primary hero-maison__btn">
             {{ section.settings.button_label_1 }}
           </a>
         {%- endif -%}
         {%- if section.settings.button_label_2 != blank -%}
-          <a
-            href="{{ section.settings.button_link_2 | default: '#' }}"
-            class="button button--secondary hero-maison__button"
-          >
+          <a href="{{ section.settings.button_link_2 | default: '#' }}" class="button button--secondary hero-maison__btn">
             {{ section.settings.button_label_2 }}
           </a>
         {%- endif -%}
@@ -82,13 +75,23 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Farbschema",
-      "default": "scheme-1"
+      "default": "scheme-3"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Textausrichtung",
+      "options": [
+        { "value": "left", "label": "Links" },
+        { "value": "center", "label": "Zentriert" }
+      ],
+      "default": "left"
     },
     {
       "type": "text",
       "id": "overline",
       "label": "Überzeile",
-      "default": "Feiner Schmuck · Handverlesen aus der Schweiz"
+      "default": "Feiner Schmuck · Handverlesen"
     },
     {
       "type": "text",
@@ -100,7 +103,7 @@
       "type": "richtext",
       "id": "subheading",
       "label": "Untertitel",
-      "default": "<p>Zeitlose Stücke, gefertigt für Momente, die bleiben. Entdecke Schmuck und Uhren, die deine Geschichte erzählen.</p>"
+      "default": "<p>Zeitlose Stücke, gefertigt für Momente, die bleiben.</p>"
     },
     {
       "type": "text",
@@ -108,42 +111,20 @@
       "label": "Button 1 – Text",
       "default": "Kollektion entdecken"
     },
-    {
-      "type": "url",
-      "id": "button_link_1",
-      "label": "Button 1 – Link"
-    },
+    { "type": "url", "id": "button_link_1", "label": "Button 1 – Link" },
     {
       "type": "text",
       "id": "button_label_2",
       "label": "Button 2 – Text",
       "default": "Uhren ansehen"
     },
-    {
-      "type": "url",
-      "id": "button_link_2",
-      "label": "Button 2 – Link"
-    },
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Hintergrundbild (optional)"
-    },
+    { "type": "url", "id": "button_link_2", "label": "Button 2 – Link" },
+    { "type": "image_picker", "id": "background_image", "label": "Hintergrundbild" },
     {
       "type": "text",
       "id": "image_asset",
-      "label": "Hintergrundbild aus Theme-Assets (Dateiname, optional)",
-      "info": "z. B. hero.png – wird genutzt, wenn kein Bild oben gewählt ist."
-    },
-    {
-      "type": "range",
-      "id": "overlay_opacity",
-      "min": 0,
-      "max": 80,
-      "step": 5,
-      "unit": "%",
-      "label": "Bild-Abdunklung",
-      "default": 35
+      "label": "Hintergrundbild aus Theme-Assets (Dateiname)",
+      "info": "z. B. hero-heart-pendant.png – genutzt, wenn kein Bild oben gewählt ist."
     },
     {
       "type": "select",
@@ -157,10 +138,6 @@
       "default": "large"
     }
   ],
-  "presets": [
-    {
-      "name": "Hero Maison"
-    }
-  ]
+  "presets": [{ "name": "Hero Maison" }]
 }
 {% endschema %}
