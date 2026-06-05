@@ -1,0 +1,95 @@
+/* ============================================================
+   Maison Aurielle – Brand polish layered over Dawn
+   Centralised typographic + accent refinements.
+   ============================================================ */
+
+:root {
+  --ma-gold: #b08d45;
+  --ma-gold-soft: #c6a052;
+}
+
+/* --- Buttons: quiet, letter-spaced, generous --- */
+.button,
+.shopify-payment-button__button--unbranded {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+  min-height: 4.8rem;
+}
+
+/* --- Navigation: refined uppercase --- */
+.header__menu-item,
+.header__menu-item.list-menu__item {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+/* --- Wordmark logo (shop name as text) --- */
+.header__heading-link,
+.header__heading-link .h2 {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* --- Headings: a touch of editorial spacing --- */
+h1,
+h2,
+.h1,
+.h2,
+.title--primary {
+  letter-spacing: 0.012em;
+  font-weight: 400;
+}
+
+/* --- Announcement bar: small caps elegance --- */
+.announcement-bar__message {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+/* --- Section titles centered with a gold hairline --- */
+.collection-list-title,
+.section-collection-list .title-wrapper-with-link,
+.featured-collection .title-wrapper-with-link,
+.multicolumn .title-wrapper {
+  text-align: center;
+  justify-content: center;
+}
+
+.featured-collection .title::after,
+.collection-list-title::after,
+.multicolumn .title::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 1px;
+  margin: 1.6rem auto 0;
+  background-color: var(--ma-gold);
+}
+
+/* --- Product / collection cards --- */
+.card__heading,
+.card__heading a {
+  letter-spacing: 0.02em;
+}
+
+.card__information {
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+
+/* --- Price accent --- */
+.price__regular .price-item--regular {
+  letter-spacing: 0.03em;
+}
+
+/* --- Links underline accent in body copy --- */
+.rte a {
+  text-underline-offset: 0.3rem;
+}
