@@ -4,7 +4,7 @@
   assign has_video = false
   assign has_picker = false
   assign has_asset = false
-  if section.settings.video_asset != blank
+  if section.settings.video_url != blank or section.settings.video_asset != blank
     assign has_video = true
   endif
   if section.settings.background_image != blank
@@ -33,7 +33,11 @@
           poster="{{ section.settings.image_asset | asset_url }}"
         {%- endif %}
       >
-        <source src="{{ section.settings.video_asset | asset_url }}" type="video/mp4">
+        {%- if section.settings.video_url != blank -%}
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+        {%- else -%}
+          <source src="{{ section.settings.video_asset | asset_url }}" type="video/mp4">
+        {%- endif -%}
       </video>
     {%- elsif has_picker -%}
       {{
@@ -151,9 +155,15 @@
     },
     {
       "type": "text",
+      "id": "video_url",
+      "label": "Hintergrund-Video URL (Shopify Files / CDN)",
+      "info": "Vollständige .mp4-URL aus Inhalte → Dateien. Spielt automatisch, stumm und in Schleife. Überschreibt das Hintergrundbild."
+    },
+    {
+      "type": "text",
       "id": "video_asset",
-      "label": "Hintergrund-Video aus Theme-Assets (Dateiname)",
-      "info": "z. B. hero.mp4 – spielt automatisch, stumm und in Schleife. Überschreibt das Hintergrundbild."
+      "label": "Hintergrund-Video aus Theme-Assets (Dateiname, optional)",
+      "info": "Fallback, falls keine Video-URL gesetzt ist. Hinweis: Shopify synct keine .mp4 aus Theme-Assets – nutze bevorzugt die Video-URL."
     },
     {
       "type": "select",
