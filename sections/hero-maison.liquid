@@ -1,8 +1,12 @@
 {{ 'section-hero-maison.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
+  assign has_video = false
   assign has_picker = false
   assign has_asset = false
+  if section.settings.video_asset != blank
+    assign has_video = true
+  endif
   if section.settings.background_image != blank
     assign has_picker = true
   elsif section.settings.image_asset != blank
@@ -12,7 +16,26 @@
 
 <div class="hero-maison hero-maison--{{ section.settings.height }} hero-maison--{{ section.settings.text_align }} color-{{ section.settings.color_scheme }} gradient">
   <div class="hero-maison__media">
-    {%- if has_picker -%}
+    {%- if has_video -%}
+      <video
+        class="hero-maison__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+        tabindex="-1"
+        disablepictureinpicture
+        {%- if section.settings.background_image != blank %}
+          poster="{{ section.settings.background_image | image_url: width: 2000 }}"
+        {%- elsif section.settings.image_asset != blank %}
+          poster="{{ section.settings.image_asset | asset_url }}"
+        {%- endif %}
+      >
+        <source src="{{ section.settings.video_asset | asset_url }}" type="video/mp4">
+      </video>
+    {%- elsif has_picker -%}
       {{
         section.settings.background_image
         | image_url: width: 3000
@@ -124,7 +147,13 @@
       "type": "text",
       "id": "image_asset",
       "label": "Hintergrundbild aus Theme-Assets (Dateiname)",
-      "info": "z. B. hero-heart-pendant.png – genutzt, wenn kein Bild oben gewählt ist."
+      "info": "z. B. hero-heart-pendant.png – genutzt, wenn kein Bild oben gewählt ist. Dient auch als Vorschaubild (Poster) für das Video."
+    },
+    {
+      "type": "text",
+      "id": "video_asset",
+      "label": "Hintergrund-Video aus Theme-Assets (Dateiname)",
+      "info": "z. B. hero.mp4 – spielt automatisch, stumm und in Schleife. Überschreibt das Hintergrundbild."
     },
     {
       "type": "select",

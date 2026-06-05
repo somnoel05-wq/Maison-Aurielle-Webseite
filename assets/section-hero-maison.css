@@ -23,12 +23,17 @@
   z-index: 0;
 }
 
-.hero-maison__image {
+.hero-maison__image,
+.hero-maison__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   opacity: 0.94;
+}
+
+.hero-maison__video {
+  pointer-events: none;
 }
 
 .hero-maison__scrim {
