@@ -20,7 +20,7 @@
         "button_link_1": "shopify://collections/frontpage",
         "button_label_2": "Uhren ansehen",
         "button_link_2": "shopify://collections/uhren",
-        "image_asset": "hero-heart-pendant.png",
+        "image_asset": "hero-poster.jpg",
         "video_url": "https://cdn.shopify.com/s/files/1/1040/7916/3717/files/hero.mp4?v=1780675664",
         "height": "large"
       }
@@ -102,7 +102,7 @@
       "type": "image-feature-maison",
       "settings": {
         "color_scheme": "scheme-1",
-        "image_asset": "about-portrait.png",
+        "image_asset": "about-portrait.jpg",
         "image_position": "left",
         "overline": "Die Maison",
         "heading": "Schmuck mit Seele",
