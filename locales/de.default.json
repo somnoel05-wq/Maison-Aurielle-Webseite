@@ -8,6 +8,19 @@
  * ------------------------------------------------------------
  */
 {
+  "maison": {
+    "trust": {
+      "gift_wrap": "Gratis Geschenkverpackung",
+      "free_shipping": "Kostenloser Versand ab CHF 50",
+      "returns": "14 Tage Rückgaberecht",
+      "ships_from": "Versand aus der Schweiz · 1–3 Tage",
+      "secure_pay": "Sichere &amp; verschlüsselte Bezahlung"
+    },
+    "freeship": {
+      "remaining_html": "Nur noch <strong>{{ amount }}</strong> bis zum kostenlosen Versand in die Schweiz.",
+      "reached": "Kostenloser Versand in die Schweiz erreicht."
+    }
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Shop mit Passwort betreten:",

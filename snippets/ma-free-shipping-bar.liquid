@@ -10,6 +10,7 @@
 {%- liquid
   assign ma_threshold = 5000
   assign ma_remaining = ma_threshold | minus: cart.total_price
+  assign ma_remaining_money = ma_remaining | money
   assign ma_percent = cart.total_price | times: 100 | divided_by: ma_threshold
   if ma_percent > 100
     assign ma_percent = 100
@@ -20,9 +21,9 @@
   <div class="ma-freeship{% if ma_remaining <= 0 %} ma-freeship--done{% endif %}" aria-live="polite">
     <p class="ma-freeship__text">
       {%- if ma_remaining > 0 -%}
-        Nur noch <strong>{{ ma_remaining | money }}</strong> bis zum kostenlosen Versand in die Schweiz.
+        {{ 'maison.freeship.remaining_html' | t: amount: ma_remaining_money }}
       {%- else -%}
-        <span class="ma-freeship__check" aria-hidden="true">✓</span> Kostenloser Versand in die Schweiz erreicht.
+        <span class="ma-freeship__check" aria-hidden="true">✓</span> {{ 'maison.freeship.reached' | t }}
       {%- endif -%}
     </p>
     <div class="ma-freeship__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ ma_percent }}">
