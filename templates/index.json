@@ -161,7 +161,7 @@
           "type": "column",
           "settings": {
             "title": "Sichere Bezahlung",
-            "text": "<p>Bezahle bequem und geschützt – Karte, PayPal, Apple Pay & Google Pay.</p>",
+            "text": "<p>Bezahle bequem und geschützt – TWINT, Karte, PayPal & Apple Pay.</p>",
             "link_label": "",
             "link": ""
           }
