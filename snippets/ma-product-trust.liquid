@@ -16,11 +16,9 @@
   .ma-securepay svg{flex:0 0 auto;width:1.5rem;height:1.5rem;}
   .ma-sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;transform:translateY(115%);transition:transform .28s ease;background:rgb(var(--color-background));border-top:1px solid rgba(var(--color-foreground),.12);box-shadow:0 -4px 22px rgba(0,0,0,.12);padding:.7rem 1.2rem;padding-bottom:calc(.7rem + env(safe-area-inset-bottom));}
   .ma-sticky.is-visible{transform:translateY(0);}
-  .ma-sticky__inner{display:flex;align-items:center;gap:1rem;max-width:62rem;margin:0 auto;}
-  .ma-sticky__info{display:flex;flex-direction:column;min-width:0;}
-  .ma-sticky__title{font-size:1.3rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw;color:rgb(var(--color-foreground));}
-  .ma-sticky__price{font-size:1.25rem;color:rgba(var(--color-foreground),.72);}
-  .ma-sticky__btn{margin-left:auto;flex:0 0 auto;white-space:nowrap;min-width:auto;}
+  .ma-sticky__inner{display:flex;align-items:center;gap:1.2rem;max-width:62rem;margin:0 auto;}
+  .ma-sticky__price{flex:0 0 auto;font-size:1.6rem;font-weight:500;letter-spacing:.02em;color:rgb(var(--color-foreground));}
+  .ma-sticky__btn{flex:1 1 auto;white-space:nowrap;min-width:auto;}
   @media (min-width:750px){.ma-sticky{display:none;}}
 </style>
 
@@ -49,10 +47,7 @@
 
 <div id="ma-sticky-{{ sid }}" class="ma-sticky" aria-hidden="true">
   <div class="ma-sticky__inner">
-    <div class="ma-sticky__info">
-      <span class="ma-sticky__title">{{ product.title | escape }}</span>
-      <span class="ma-sticky__price" id="ma-sticky-price-{{ sid }}">{{ variant.price | money }}</span>
-    </div>
+    <span class="ma-sticky__price" id="ma-sticky-price-{{ sid }}">{{ variant.price | money }}</span>
     <button type="submit" name="add" form="product-form-{{ sid }}" class="button ma-sticky__btn">{{ 'products.product.add_to_cart' | t }}</button>
   </div>
 </div>

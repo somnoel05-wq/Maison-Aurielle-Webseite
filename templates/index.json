@@ -202,7 +202,7 @@
         "column_alignment": "center",
         "background_style": "none",
         "color_scheme": "scheme-5",
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 56,
         "padding_bottom": 56
