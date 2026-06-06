@@ -55,7 +55,7 @@
           "settings": {
             "heading": "Versand & Lieferung",
             "icon": "truck",
-            "content": "<p>Versand aus der Schweiz, Bearbeitung innert 1–2 Werktagen. Kostenloser Versand ab einem Bestellwert von CHF 50.</p>",
+            "content": "<p>Jede Bestellung wird sorgfältig geprüft, liebevoll von Hand verpackt und mit Sendungsverfolgung verschickt. Kostenloser Versand ab einem Bestellwert von CHF 200.</p>",
             "page": ""
           }
         },
@@ -118,7 +118,7 @@
           "type": "column",
           "settings": {
             "title": "Kostenloser Versand",
-            "text": "<p>Gratis Lieferung in der Schweiz ab CHF 50.</p>",
+            "text": "<p>Gratis Lieferung ab einem Bestellwert von CHF 200.</p>",
             "link_label": "",
             "link": ""
           }

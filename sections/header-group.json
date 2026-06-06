@@ -8,7 +8,7 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "Kostenloser Versand in der Schweiz ab CHF 50",
+            "text": "Kostenloser Versand ab CHF 200",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""
@@ -17,7 +17,7 @@
         "announcement-2": {
           "type": "announcement",
           "settings": {
-            "text": "Liebevoll von Hand verpackt · Versand innert 1–2 Tagen",
+            "text": "Liebevoll von Hand verpackt · Sorgfältig verschickt",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""

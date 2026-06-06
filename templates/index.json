@@ -15,7 +15,7 @@
         "color_scheme": "scheme-3",
         "overline": "Feiner Schmuck · Handverlesen",
         "heading": "Zeitloser Schmuck für besondere Momente",
-        "subheading": "<p>Feiner Schmuck für besondere Anlässe – ob als Geschenk oder als kleine Liebeserklärung an dich selbst. Handverlesen, liebevoll verpackt und versandt aus der Schweiz.</p>",
+        "subheading": "<p>Feiner Schmuck für besondere Anlässe – ob als Geschenk oder als kleine Liebeserklärung an dich selbst. Handverlesen und liebevoll verpackt.</p>",
         "button_label_1": "Kollektion entdecken",
         "button_link_1": "shopify://collections/frontpage",
         "button_label_2": "Uhren ansehen",
@@ -152,7 +152,7 @@
           "type": "column",
           "settings": {
             "title": "Kostenloser Versand",
-            "text": "<p>Gratis Lieferung innerhalb der Schweiz ab CHF 50.</p>",
+            "text": "<p>Gratis Lieferung ab einem Bestellwert von CHF 200.</p>",
             "link_label": "",
             "link": ""
           }
