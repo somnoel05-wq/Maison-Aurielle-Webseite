@@ -1,0 +1,78 @@
+{%- comment -%}
+  Maison Aurielle – Conversion-Block für die Produktseite:
+  1) Vertrauens-/Reassurance-Zeile direkt unter "In den Warenkorb"
+  2) Sticky "In den Warenkorb"-Leiste für Mobilgeräte (erscheint beim Scrollen)
+  Aufruf: {% render 'ma-product-trust', product: product, section_id: section.id %}
+{%- endcomment -%}
+{%- liquid
+  assign sid = section_id
+  assign variant = product.selected_or_first_available_variant
+-%}
+<style>
+  .ma-trust{display:grid;grid-template-columns:1fr 1fr;gap:.7rem 1.6rem;margin:1.6rem 0 .2rem;padding-top:1.4rem;border-top:1px solid rgba(var(--color-foreground),.12);}
+  .ma-trust__item{display:flex;align-items:center;gap:.7rem;font-size:1.35rem;line-height:1.3;color:rgba(var(--color-foreground),.88);}
+  .ma-trust__item svg{flex:0 0 auto;width:1.9rem;height:1.9rem;color:#b08d57;}
+  .ma-securepay{display:flex;align-items:center;justify-content:center;gap:.55rem;margin:1rem 0 .2rem;font-size:1.2rem;letter-spacing:.02em;color:rgba(var(--color-foreground),.58);}
+  .ma-securepay svg{flex:0 0 auto;width:1.5rem;height:1.5rem;}
+  .ma-sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;transform:translateY(115%);transition:transform .28s ease;background:rgb(var(--color-background));border-top:1px solid rgba(var(--color-foreground),.12);box-shadow:0 -4px 22px rgba(0,0,0,.12);padding:.7rem 1.2rem;padding-bottom:calc(.7rem + env(safe-area-inset-bottom));}
+  .ma-sticky.is-visible{transform:translateY(0);}
+  .ma-sticky__inner{display:flex;align-items:center;gap:1rem;max-width:62rem;margin:0 auto;}
+  .ma-sticky__info{display:flex;flex-direction:column;min-width:0;}
+  .ma-sticky__title{font-size:1.3rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw;color:rgb(var(--color-foreground));}
+  .ma-sticky__price{font-size:1.25rem;color:rgba(var(--color-foreground),.72);}
+  .ma-sticky__btn{margin-left:auto;flex:0 0 auto;white-space:nowrap;min-width:auto;}
+  @media (min-width:750px){.ma-sticky{display:none;}}
+</style>
+
+<div class="ma-trust">
+  <div class="ma-trust__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7S10.5 3 7.5 3 4 4.6 4 5.5 5 7 7.5 7 12 7 12 7zm0 0s1.5-4 4.5-4S20 4.6 20 5.5 19 7 16.5 7 12 7 12 7z"/></svg>
+    <span>Gratis Geschenkverpackung</span>
+  </div>
+  <div class="ma-trust__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 4h13v12H1z"/><path d="M14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg>
+    <span>Kostenloser Versand ab CHF 50</span>
+  </div>
+  <div class="ma-trust__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11a5 5 0 0 1 0 10H7"/><path d="M6 4 3 7l3 3"/></svg>
+    <span>14 Tage Rückgaberecht</span>
+  </div>
+  <div class="ma-trust__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    <span>Versand aus der Schweiz · 1–3 Tage</span>
+  </div>
+</div>
+<div class="ma-securepay">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+  <span>Sichere &amp; verschlüsselte Bezahlung</span>
+</div>
+
+<div id="ma-sticky-{{ sid }}" class="ma-sticky" aria-hidden="true">
+  <div class="ma-sticky__inner">
+    <div class="ma-sticky__info">
+      <span class="ma-sticky__title">{{ product.title | escape }}</span>
+      <span class="ma-sticky__price" id="ma-sticky-price-{{ sid }}">{{ variant.price | money }}</span>
+    </div>
+    <button type="submit" name="add" form="product-form-{{ sid }}" class="button ma-sticky__btn">In den Warenkorb</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var sid={{ sid | json }};
+  var bar=document.getElementById('ma-sticky-'+sid);
+  var anchor=document.getElementById('ProductSubmitButton-'+sid)||document.querySelector('#ProductInfo-'+sid+' [type="submit"][name="add"]');
+  if(!bar||!anchor||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting && e.boundingClientRect.top<0){bar.classList.add('is-visible');}
+    else{bar.classList.remove('is-visible');}
+  });},{threshold:0});
+  io.observe(anchor);
+  var mainPrice=document.querySelector('#ProductInfo-'+sid+' .price__regular .price-item--regular')||document.querySelector('#ProductInfo-'+sid+' .price-item--regular');
+  var stickyPrice=document.getElementById('ma-sticky-price-'+sid);
+  if(mainPrice&&stickyPrice){
+    var sync=function(){var t=mainPrice.textContent.trim();if(t)stickyPrice.textContent=t;};
+    document.addEventListener('change',function(e){if(e.target.closest&&e.target.closest('#ProductInfo-'+sid))setTimeout(sync,350);});
+  }
+})();
+</script>

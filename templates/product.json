@@ -32,6 +32,12 @@
             "show_gift_card_recipient": false
           }
         },
+        "trust_block": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ma-product-trust', product: product, section_id: section.id %}"
+          }
+        },
         "description": {
           "type": "description"
         },
@@ -85,6 +91,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "trust_block",
         "description",
         "collapsible-material",
         "collapsible-shipping",
