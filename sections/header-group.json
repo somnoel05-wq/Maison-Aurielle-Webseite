@@ -8,7 +8,7 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "Kostenloser Versand ab CHF 200",
+            "text": "Kostenloser Versand ab CHF 100",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""

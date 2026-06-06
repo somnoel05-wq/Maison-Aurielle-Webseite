@@ -152,7 +152,7 @@
           "type": "column",
           "settings": {
             "title": "Kostenloser Versand",
-            "text": "<p>Gratis Lieferung ab einem Bestellwert von CHF 200.</p>",
+            "text": "<p>Gratis Lieferung ab einem Bestellwert von CHF 100.</p>",
             "link_label": "",
             "link": ""
           }

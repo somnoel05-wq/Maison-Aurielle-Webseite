@@ -8,7 +8,7 @@
 {% endcomment %}
 
 {%- liquid
-  assign ma_threshold = 20000
+  assign ma_threshold = 10000
   assign ma_remaining = ma_threshold | minus: cart.total_price
   assign ma_remaining_money = ma_remaining | money
   assign ma_percent = cart.total_price | times: 100 | divided_by: ma_threshold
