@@ -247,10 +247,13 @@ html.ma-hero-header .header-wrapper {
 html.ma-hero-header:not(.ma-hdr-solid) .header-wrapper::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(100% + 32px);
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(20, 16, 12, 0.32), rgba(20, 16, 12, 0));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.62) 0%, rgba(16, 12, 8, 0.34) 55%, rgba(16, 12, 8, 0) 100%);
 }
 /* Weisse Navigation/Icons solange transparent (über dem Hero) */
 html.ma-hero-header:not(.ma-hdr-solid) .header__heading-link,
@@ -260,6 +263,10 @@ html.ma-hero-header:not(.ma-hdr-solid) .header__icon,
 html.ma-hero-header:not(.ma-hdr-solid) .header__icon .icon,
 html.ma-hero-header:not(.ma-hdr-solid) .header__icon svg {
   color: #fff;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+html.ma-hero-header:not(.ma-hdr-solid) .header__icon svg {
+  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.5));
 }
 /* Gescrollt: Elfenbein + feiner Blur (sanfter Morph) */
 html.ma-hero-header.ma-hdr-solid .header-wrapper {
