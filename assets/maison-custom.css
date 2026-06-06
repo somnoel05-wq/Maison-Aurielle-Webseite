@@ -350,6 +350,27 @@ html.ma-hero-header.ma-hdr-solid .header-wrapper {
       linear-gradient(0deg, rgba(8, 7, 6, 0.44) 0%, rgba(8, 7, 6, 0) 48%);
   }
 
+  /* Wortmarke auf EINE Zeile zwingen (vorher 3 Zeilen inkl. einzelnem "E"
+     und Kollision mit der Hero-Überzeile) */
+  .header__heading-link,
+  .header__heading-link .h2,
+  .header__heading {
+    font-size: 1.7rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+  /* Hero-Inhalt startet sauber unter dem transparenten Header,
+     damit die Überzeile nicht mehr hinter der Wortmarke liegt.
+     Bindet an die real gemessene Header-Höhe (--ma-header-h). */
+  html.ma-hero-header .hero-maison .hero-maison__inner {
+    padding-top: calc(var(--ma-header-h, 92px) + 3.5rem);
+  }
+  /* Ankündigungsleiste passt auf eine Zeile ("100" rutschte um) */
+  .announcement-bar__message {
+    letter-spacing: 0.1em;
+    font-size: 1.05rem;
+  }
+
   /* Lesbarere Schriftgrößen auf dem Handy (Fließtext 15px -> 16.5px).
      Greift auf vererbten Text: Beschreibungen, RTE, Footer-Links,
      USP-/Multicolumn-Texte, Collapsibles. Überschriften bleiben. */
