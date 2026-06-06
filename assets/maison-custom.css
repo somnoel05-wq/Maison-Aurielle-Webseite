@@ -349,4 +349,35 @@ html.ma-hero-header.ma-hdr-solid .header-wrapper {
       linear-gradient(90deg, rgba(8, 7, 6, 0.82) 0%, rgba(8, 7, 6, 0.54) 55%, rgba(8, 7, 6, 0.24) 100%),
       linear-gradient(0deg, rgba(8, 7, 6, 0.44) 0%, rgba(8, 7, 6, 0) 48%);
   }
+
+  /* Lesbarere Schriftgrößen auf dem Handy (Fließtext 15px -> 16.5px).
+     Greift auf vererbten Text: Beschreibungen, RTE, Footer-Links,
+     USP-/Multicolumn-Texte, Collapsibles. Überschriften bleiben. */
+  body {
+    font-size: 1.65rem;
+  }
+  .hero-maison__subheading {
+    font-size: 1.75rem;
+  }
+  .image-feature .image-feature__text,
+  .image-feature .image-feature__text p {
+    font-size: 1.7rem;
+  }
+  .multicolumn-card__info > * {
+    font-size: 1.6rem;
+  }
+  .product__text,
+  .product .rte {
+    font-size: 1.65rem;
+  }
+  /* Winzige Elemente gezielt anheben (höhere Spezifität schlägt Inline-Styles) */
+  .copyright__content {
+    font-size: 1.3rem;
+  }
+  .ma-trust .ma-trust__item {
+    font-size: 1.5rem;
+  }
+  .ma-securepay span {
+    font-size: 1.3rem;
+  }
 }
