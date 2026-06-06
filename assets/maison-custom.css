@@ -253,24 +253,21 @@ html.ma-hero-header:not(.ma-hdr-solid) .header-wrapper::before {
   height: calc(100% + 60px);
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(12, 9, 5, 0.85) 0%, rgba(12, 9, 5, 0.58) 50%, rgba(12, 9, 5, 0) 100%);
+  background: linear-gradient(to bottom, rgba(249, 248, 243, 0.80) 0%, rgba(249, 248, 243, 0.44) 45%, rgba(249, 248, 243, 0) 100%);
 }
-/* Weisse Navigation/Icons solange transparent (über dem Hero) */
+/* Dunkle Espresso-Navigation (sticht auf hellem Gold heraus) + feiner heller Halo */
 html.ma-hero-header:not(.ma-hdr-solid) .header__heading-link,
+html.ma-hero-header:not(.ma-hdr-solid) .header__heading-link .h2,
 html.ma-hero-header:not(.ma-hdr-solid) .header__menu-item,
 html.ma-hero-header:not(.ma-hdr-solid) .header__active-menu-item,
 html.ma-hero-header:not(.ma-hdr-solid) .header__icon,
 html.ma-hero-header:not(.ma-hdr-solid) .header__icon .icon,
 html.ma-hero-header:not(.ma-hdr-solid) .header__icon svg {
-  color: #fff;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.55);
-}
-/* Wortmarke (zentral, über dem hellsten Hero-Punkt) – extra kräftiger Halo */
-html.ma-hero-header:not(.ma-hdr-solid) .header__heading-link {
-  text-shadow: 0 0 24px rgba(0, 0, 0, 0.85), 0 0 8px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.6);
+  color: #241f1b !important;
+  text-shadow: 0 0 9px rgba(249, 248, 243, 0.95), 0 0 2px rgba(249, 248, 243, 0.9);
 }
 html.ma-hero-header:not(.ma-hdr-solid) .header__icon svg {
-  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 4px rgba(249, 248, 243, 0.9));
 }
 /* Gescrollt: Elfenbein + feiner Blur (sanfter Morph) */
 html.ma-hero-header.ma-hdr-solid .header-wrapper {
