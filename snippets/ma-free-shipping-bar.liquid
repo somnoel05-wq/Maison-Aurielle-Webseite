@@ -1,0 +1,32 @@
+{% comment %}
+  Maison Aurielle – Gratisversand-Fortschrittsbalken
+  Zeigt, wie viel bis zum kostenlosen Versand (CH, ab CHF 50) fehlt.
+  Rein server-seitig: aktualisiert sich, weil Cart-Drawer (.drawer__inner)
+  und Cart-Footer (.js-contents) bei jedem AJAX-Update neu gerendert werden.
+
+  Usage: {% render 'ma-free-shipping-bar' %}
+{% endcomment %}
+
+{%- liquid
+  assign ma_threshold = 5000
+  assign ma_remaining = ma_threshold | minus: cart.total_price
+  assign ma_percent = cart.total_price | times: 100 | divided_by: ma_threshold
+  if ma_percent > 100
+    assign ma_percent = 100
+  endif
+-%}
+
+{%- if cart != empty -%}
+  <div class="ma-freeship{% if ma_remaining <= 0 %} ma-freeship--done{% endif %}" aria-live="polite">
+    <p class="ma-freeship__text">
+      {%- if ma_remaining > 0 -%}
+        Nur noch <strong>{{ ma_remaining | money }}</strong> bis zum kostenlosen Versand in die Schweiz.
+      {%- else -%}
+        <span class="ma-freeship__check" aria-hidden="true">✓</span> Kostenloser Versand in die Schweiz erreicht.
+      {%- endif -%}
+    </p>
+    <div class="ma-freeship__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ ma_percent }}">
+      <span class="ma-freeship__fill" style="width: {{ ma_percent }}%;"></span>
+    </div>
+  </div>
+{%- endif -%}

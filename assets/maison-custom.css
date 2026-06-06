@@ -279,3 +279,51 @@ html.ma-hero-header.ma-hdr-solid .header-wrapper {
 @media (prefers-reduced-motion: reduce) {
   html.ma-hero-header .header-wrapper { transition: none; }
 }
+
+/* ============================================================
+   Gratisversand-Fortschrittsbalken (Cart-Drawer + Cart-Seite)
+   ============================================================ */
+.ma-freeship {
+  margin: 1.4rem 1.5rem 0.4rem;
+  padding: 1.3rem 1.6rem 1.4rem;
+  background: rgba(198, 161, 82, 0.06);
+  border: 1px solid rgba(198, 161, 82, 0.22);
+  border-radius: 10px;
+}
+.cart__footer .ma-freeship,
+#main-cart-footer .ma-freeship { margin-left: 0; margin-right: 0; }
+
+.ma-freeship__text {
+  margin: 0 0 1rem;
+  font-family: var(--font-body-family);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--ma-ink);
+}
+.ma-freeship__text strong { font-weight: 500; color: var(--ma-gold-deep); }
+.ma-freeship--done .ma-freeship__text { color: var(--ma-gold-deep); }
+.ma-freeship__check {
+  display: inline-block;
+  margin-right: 0.3rem;
+  font-weight: 600;
+}
+
+.ma-freeship__track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(46, 45, 43, 0.10);
+  overflow: hidden;
+}
+.ma-freeship__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ma-gold) 0%, var(--ma-gold-deep) 100%);
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ma-freeship__fill { transition: none; }
+}
