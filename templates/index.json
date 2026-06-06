@@ -15,7 +15,7 @@
         "color_scheme": "scheme-3",
         "overline": "Feiner Schmuck · Handverlesen",
         "heading": "Zeitloser Schmuck für besondere Momente",
-        "subheading": "<p>Feiner Schmuck für besondere Anlässe – ob als Geschenk oder als kleine Liebeserklärung an dich selbst. Handverlesen und liebevoll verpackt.</p>",
+        "subheading": "<p>Feiner Schmuck für besondere Anlässe – ob als Geschenk oder als kleine Liebeserklärung an dich selbst. Handverlesen und sorgfältig versendet.</p>",
         "button_label_1": "Kollektion entdecken",
         "button_link_1": "shopify://collections/frontpage",
         "button_label_2": "Uhren ansehen",
@@ -140,7 +140,7 @@
         "image_position": "right",
         "overline": "Schenken mit Bedeutung",
         "heading": "Das perfekte Geschenk",
-        "text": "<p>Ob Geburtstag, Jahrestag oder einfach so – ein Schmuckstück von Maison Aurielle sagt mehr als Worte. Jede Bestellung kommt in einer edlen Geschenkverpackung, bereit, Freude zu schenken.</p>",
+        "text": "<p>Ob Geburtstag, Jahrestag oder einfach so – ein Schmuckstück von Maison Aurielle sagt mehr als Worte. Ein besonderes Stück, das von Herzen kommt und Freude schenkt.</p>",
         "button_label": "Geschenke entdecken",
         "button_link": "shopify://collections/frontpage"
       }
@@ -169,8 +169,8 @@
         "u3": {
           "type": "column",
           "settings": {
-            "title": "Liebevoll verpackt",
-            "text": "<p>Jedes Stück kommt in edler Geschenkverpackung zu dir.</p>",
+            "title": "Geschützt verpackt",
+            "text": "<p>Jedes Stück erreicht dich sicher und geschützt verpackt.</p>",
             "link_label": "",
             "link": ""
           }

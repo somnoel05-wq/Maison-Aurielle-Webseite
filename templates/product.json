@@ -55,7 +55,7 @@
           "settings": {
             "heading": "Versand & Lieferung",
             "icon": "truck",
-            "content": "<p>Jede Bestellung wird sorgfältig geprüft, liebevoll von Hand verpackt und mit Sendungsverfolgung verschickt. Die Lieferzeit beträgt in der Regel 1–3 Wochen. Kostenloser Versand ab einem Bestellwert von CHF 100.</p>",
+            "content": "<p>Jede Bestellung wird geschützt verpackt und mit Sendungsverfolgung verschickt. Die Lieferzeit beträgt in der Regel 1–3 Wochen. Kostenloser Versand ab einem Bestellwert von CHF 100.</p>",
             "page": ""
           }
         },
@@ -135,8 +135,8 @@
         "u3": {
           "type": "column",
           "settings": {
-            "title": "Liebevoll verpackt",
-            "text": "<p>Jedes Stück kommt in edler Geschenkverpackung.</p>",
+            "title": "Geschützt verpackt",
+            "text": "<p>Jedes Stück erreicht dich sicher und geschützt verpackt.</p>",
             "link_label": "",
             "link": ""
           }

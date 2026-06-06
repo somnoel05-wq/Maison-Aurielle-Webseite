@@ -17,7 +17,7 @@
         "announcement-2": {
           "type": "announcement",
           "settings": {
-            "text": "Liebevoll von Hand verpackt · Sorgfältig verschickt",
+            "text": "Geschützt verpackt · Sorgfältig verschickt",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""
