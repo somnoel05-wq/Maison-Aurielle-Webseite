@@ -280,6 +280,32 @@
         } catch (err) { document.documentElement.classList.remove('ma-anim'); }
       })();
     </script>
+    {%- if request.page_type == 'index' -%}
+    <script>
+      (function () {
+        try {
+          var root = document.documentElement;
+          root.classList.add('ma-hero-header');
+          var hero = null;
+          var headerH = 92;
+          var measure = function () {
+            var h = document.querySelector('.header-wrapper');
+            if (h) { headerH = h.offsetHeight; root.style.setProperty('--ma-header-h', headerH + 'px'); }
+            hero = document.querySelector('.hero-maison');
+          };
+          var onScroll = function () {
+            var bottom = hero ? hero.getBoundingClientRect().bottom : 80;
+            if (bottom - headerH <= 0) { root.classList.add('ma-hdr-solid'); }
+            else { root.classList.remove('ma-hdr-solid'); }
+          };
+          var init = function () { measure(); onScroll(); };
+          if (document.readyState !== 'loading') { init(); } else { document.addEventListener('DOMContentLoaded', init); }
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('resize', function () { measure(); onScroll(); });
+        } catch (err) { document.documentElement.classList.remove('ma-hero-header'); }
+      })();
+    </script>
+    {%- endif -%}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
