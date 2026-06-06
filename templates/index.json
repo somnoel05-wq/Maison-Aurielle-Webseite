@@ -15,7 +15,7 @@
         "color_scheme": "scheme-3",
         "overline": "Feiner Schmuck · Handverlesen",
         "heading": "Zeitloser Schmuck für besondere Momente",
-        "subheading": "<p>Entdecke Halsketten, Uhren und Perlen von Maison Aurielle – fein, feminin und gefertigt, um zu bleiben.</p>",
+        "subheading": "<p>Feiner Schmuck für besondere Anlässe – ob als Geschenk oder als kleine Liebeserklärung an dich selbst. Handverlesen, liebevoll verpackt und versandt aus der Schweiz.</p>",
         "button_label_1": "Kollektion entdecken",
         "button_link_1": "shopify://collections/frontpage",
         "button_label_2": "Uhren ansehen",
@@ -132,6 +132,19 @@
         "padding_bottom": 40
       }
     },
+    "gift": {
+      "type": "image-feature-maison",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "image_asset": "hero-heart-pendant.png",
+        "image_position": "right",
+        "overline": "Schenken mit Bedeutung",
+        "heading": "Das perfekte Geschenk",
+        "text": "<p>Ob Geburtstag, Jahrestag oder einfach so – ein Schmuckstück von Maison Aurielle sagt mehr als Worte. Jede Bestellung kommt in einer edlen Geschenkverpackung, bereit, Freude zu schenken.</p>",
+        "button_label": "Geschenke entdecken",
+        "button_link": "shopify://collections/frontpage"
+      }
+    },
     "usps": {
       "type": "multicolumn",
       "blocks": {
@@ -148,7 +161,7 @@
           "type": "column",
           "settings": {
             "title": "Sichere Bezahlung",
-            "text": "<p>Bezahle bequem und geschützt – TWINT, Karte, PayPal.</p>",
+            "text": "<p>Bezahle bequem und geschützt – Karte, PayPal, Apple Pay & Google Pay.</p>",
             "link_label": "",
             "link": ""
           }
@@ -255,6 +268,7 @@
     "categories",
     "brand_story",
     "watches",
+    "gift",
     "usps",
     "necklaces",
     "newsletter"
